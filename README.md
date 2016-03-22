@@ -1,0 +1,2 @@
+# django_blog
+基于python的django框架写的简单博客，目的充分了解django的所有功能
