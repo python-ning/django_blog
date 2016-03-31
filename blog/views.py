@@ -5,7 +5,7 @@ def index(request):
     return render(request, 'index.html', locals())
 
 
-def photo(request):
+def photo(request): 
     return render(request, 'photo.html', locals())
 
 
