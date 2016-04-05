@@ -1,8 +1,9 @@
 from django.shortcuts import render
-
+from models import *
 
 def index(request):
-    return render(request, 'index.html', locals())
+    banners = Banner.objects.all()
+    return render(request, 'index.html', {'banners': banners})
 
 
 def photo(request): 
@@ -15,3 +16,6 @@ def article(request):
 
 def contact(request):
     return render(request, 'contact.html', locals())
+
+def article_info(request):
+    return render(request, 'article_info.html', locals())
