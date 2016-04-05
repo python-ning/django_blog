@@ -36,112 +36,41 @@
         <h4>From blog</h4>
          </article>
               <ul class="thumbnails thumbnails-1">
-            <li class="span3">
-                  <div class="thumbnail thumbnail-1">
-                <h3>标题</h3>
-                <img  src="static/img/blog-featured-01.jpg" alt="">
-                <section> 
-                    <a href="#"><h3>At vero eos et accusamus et iusto </h3></a>
-                      <div class="meta">
-                            <time datetime="2012-11-09" class="date-1"><i class="icon-calendar"></i> 9.11.2012</time>
-                            <div class="name-author"><i class="icon-user"></i> <a href="#">Admin</a></div>
-                            <a href="#" class="comments"><i class="icon-comment"></i> 7 comments</a>
+            {% for article in articles %}
+              <li class="span3">
+                <div class="thumbnail thumbnail-1">
+                  <h3>{{ article.title }}</h3>
+                  <img  src="static/uploads/{{ article.article_image }}" alt="">
+                  <section> 
+                        <div class="meta">
+                              <time datetime="2012-11-09" class="date-1"><i class="icon-calendar"></i>{{ article.create_date }}</time>
+                              <div class="name-author"><i class="icon-user"></i>Admin</div>
+                              <a href="#" class="comments"><i class="icon-comment"></i> 7 comments</a>
                         </div>                       
                         <div class="meta">
-                            <div class="name-author" style="padding-left: 0px;">
-                                分类:<a href="#">分类</a>
-                                &nbsp;&nbsp;&nbsp;
-                                标签:<a href="#">标签</a>
-                            </div>
+                              <div class="name-author" style="padding-left: 0px;">
+                                  分类:<a href="#">分类</a>
+                                  &nbsp;&nbsp;&nbsp;
+                                  标签:<a href="#">标签</a>
+                              </div>
                         </div> 
                         <div class="clear"></div>
-                      <p>Vivamus sollicitudin libero auctor arcu pulvinar commodo.</p>
-                      <a href="#" class="btn btn-1">Read More</a> 
-                </section>
-              </div>
-                </li>
-            <li class="span3">
-                  <div class="thumbnail thumbnail-1">
-                <h3>标题</h3>
-                <img  src="static/img/blog-featured-01.jpg" alt="">
-                <section> 
-                    <a href="#"><h3>At vero eos et accusamus et iusto </h3></a>
-                      <div class="meta">
-                            <time datetime="2012-11-09" class="date-1"><i class="icon-calendar"></i> 9.11.2012</time>
-                            <div class="name-author"><i class="icon-user"></i> <a href="#">Admin</a></div>
-                            <a href="#" class="comments"><i class="icon-comment"></i> 7 comments</a>
-                        </div>                       
-                        <div class="meta">
-                            <div class="name-author" style="padding-left: 0px;">
-                                分类:<a href="#">分类</a>
-                                &nbsp;&nbsp;&nbsp;
-                                标签:<a href="#">标签</a>
-                            </div>
-                        </div> 
-                        <div class="clear"></div>
-                      <p>Vivamus sollicitudin libero auctor arcu pulvinar commodo.</p>
-                      <a href="#" class="btn btn-1">Read More</a> 
-                </section>
-              </div>
-                </li>
-            <li class="span3">
-                  <div class="thumbnail thumbnail-1">
-                <h3>标题</h3>
-                <img  src="static/img/blog-featured-03.jpg" alt="">
-                <section> 
-                    <a href="#"><h3>At vero eos et accusamus et iusto </h3></a>
-                      <div class="meta">
-                            <time datetime="2012-11-09" class="date-1"><i class="icon-calendar"></i> 9.11.2012</time>
-                            <div class="name-author"><i class="icon-user"></i> <a href="#">Admin</a></div>
-                            <a href="#" class="comments"><i class="icon-comment"></i> 7 comments</a>
-                        </div>                       
-                        <div class="meta">
-                            <div class="name-author" style="padding-left: 0px;">
-                                分类:<a href="#">分类</a>
-                                &nbsp;&nbsp;&nbsp;
-                                标签:<a href="#">标签</a>
-                            </div>
-                        </div> 
-                        <div class="clear"></div>
-                      <p>Vivamus sollicitudin libero auctor arcu pulvinar commodo.</p>
-                      <a href="#" class="btn btn-1">Read More</a> 
-                </section>
-              </div>
-                </li>
-            <li class="span3">
-                  <div class="thumbnail thumbnail-1">
-                <h3 class="title-1 extra">标题</h3>
-                <img  src="static/img/blog-featured-04.jpg" alt="">
-                <section> 
-                    <a href="#"><h3>At vero eos et accusamus et iusto </h3></a>
-                      <div class="meta">
-                            <time datetime="2012-11-09" class="date-1"><i class="icon-calendar"></i> 9.11.2012</time>
-                            <div class="name-author"><i class="icon-user"></i> <a href="#">Admin</a></div>
-                            <a href="#" class="comments"><i class="icon-comment"></i> 7 comments</a>
-                        </div>                       
-                        <div class="meta">
-                            <div class="name-author" style="padding-left: 0px;">
-                                分类:<a href="#">分类</a>
-                                &nbsp;&nbsp;&nbsp;
-                                标签:<a href="#">标签</a>
-                            </div>
-                        </div> 
-                        <div class="clear"></div>
-                      <p>Vivamus sollicitudin libero auctor arcu pulvinar commodo.</p>
-                      <a href="#" class="btn btn-1">Read More</a> 
-                </section>
-              </div>
-                </li>
+                        <p>{{ article.description }}</p>
+                        <a href="#" class="btn btn-1">了解更多</a> 
+                  </section>
+                </div>
+              </li>
+            {% endfor %}
           </ul>
             </div>
       </div>
         </div>
     <div class="row-2">
         <div class="container">
-          <h3>Completly Customizable and Responsive</h3>
-            <h3>Easy to Use. Totally Free to Download. Made with love!</h3>
-            <p>The complete template is created using the Bootstrap framework, which is highly customizable with lots of options.</p>
-            <a href="#" class="btn btn-1">Download</a>
+          <h3>python</h3>
+            <h3>like python and love pythonlike python and love pythonlike python and love python </h3>
+            <p>pythonpythonpythonpython </p>
+            <a href="#" class="btn btn-1">download</a>
       </div>
         </div>
     <div class="row-1">
@@ -167,41 +96,41 @@
     <div class="container">
           <div class="row">
         <article class="span6">
-              <h3>Shortly about us</h3>
+              <h3>关于我</h3>
               <div class="wrapper">
             <figure class="img-indent"><img src="static/img/15.jpg " alt="" /></figure>
             <div class="inner-1 overflow extra"  style="line-height: 20px">
-                  <div class="txt-1"  style="line-height: 20px">Mauris scelerisque odio quis leo viverra ac porttitor sem blandit. Sed tincidunt mattis varius. Nunc sodales ipsum nisl, eget lacinia nibh.</div>
-                  Cras lacus tortor, tempus vitae porta nec, hendrerit id dolor. Nam volutpat gravida porta. Suspendisse turpis nibh, volutpat. 
+                  <div class="txt-1"  style="line-height: 20px">发工资发工资发工资发工资发工资发工资发工资发工资</div>
+                  发工资发工资发工资发工资发工资发工资发工资发工资发工资发工资发工资发工资发工资发工资发工资发工资发工资发工资发工资发工资发工资发工资发工资发工资. 
                 </div>
           </div>
             </article>
         <article class="span6">
-              <h3>Some quick links</h3>
+              <h3>发工资</h3>
                 <div class="wrapper">
                     <ul class="list list-pad">
-                          <li><a href="#">Campaigns</a></li>
-                          <li><a href="#">Portraits</a></li>
-                          <li><a href="#">Fashion</a></li>
-                          <li><a href="#">Fine Art</a></li>
+                          <li><a href="#">发工资</a></li>
+                          <li><a href="#">发工资</a></li>
+                          <li><a href="#">发工资</a></li>
+                          <li><a href="#">发工资 发工资</a></li>
                         </ul>
                     <ul class="list list-pad">
-                          <li><a href="#">Campaigns</a></li>
-                          <li><a href="#">Portraits</a></li>
-                          <li><a href="#">Fashion</a></li>
-                          <li><a href="#">Fine Art</a></li>
+                          <li><a href="#">发工资</a></li>
+                          <li><a href="#">发工资</a></li>
+                          <li><a href="#">发工资</a></li>
+                          <li><a href="#">发工资 发工资</a></li>
                         </ul>
                     <ul class="list list-pad">
-                          <li><a href="#">Campaigns</a></li>
-                          <li><a href="#">Portraits</a></li>
-                          <li><a href="#">Fashion</a></li>
-                          <li><a href="#">Fine Art</a></li>
+                          <li><a href="#">发工资</a></li>
+                          <li><a href="#">发工资</a></li>
+                          <li><a href="#">发工资</a></li>
+                          <li><a href="#">发工资 发工资</a></li>
                         </ul>
                     <ul class="list">
-                          <li><a href="#">Advertising</a></li>
-                          <li><a href="#">Lifestyle</a></li>
-                          <li><a href="#">Love story</a></li>
-                          <li><a href="#">Landscapes</a></li>
+                          <li><a href="#">发工资</a></li>
+                          <li><a href="#">发工资</a></li>
+                          <li><a href="#">发工资 发工资</a></li>
+                          <li><a href="#">发工资</a></li>
                     </ul>
                 </div>
             </article>
