@@ -14,8 +14,8 @@
               <li style="padding-bottom: 10px;"><a href="{% url 'article_info' article_category.id %}" style="font-size: 18px;">{{ article_category.title }}</a></li> 
            <time datetime="2012-11-09" class="date-1"><i class="icon-calendar icon-white"></i>&nbsp;{{ article_category.create_date }}</time>
             <div class="name-author"><i class="icon-user icon-white"></i>&nbsp;Admin</div>
-            <div class="name-author">分类:<a href="#">&nbsp;&nbsp;{{ article_category.category }}</a></div>
-            <div class="name-author">标签:<a href="#">&nbsp;&nbsp;{{ article_category.tag }}</a></div>
+            <div class="name-author">分类:<a href="{% url 'category_info' article_category.category.id %}">&nbsp;&nbsp;{{ article_category.category }}</a></div>
+            <div class="name-author">标签:<a href="{% url 'tag_info' article_category.tag.id %}">&nbsp;&nbsp;{{ article_category.tag }}</a></div>
             <div class="name-author">浏览量:<a href="#">&nbsp;&nbsp;浏览量</a></div>
             <div class="clear"></div>                             
             {% endfor %}             

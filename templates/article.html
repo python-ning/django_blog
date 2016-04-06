@@ -13,8 +13,8 @@
             <h3>{{ article.title }}</h3>     
             <time datetime="2012-11-09" class="date-1"><i class="icon-calendar icon-white"></i>&nbsp;{{ article.create_date }}</time>
             <div class="name-author"><i class="icon-user icon-white"></i>&nbsp;Admin</div>
-            <div class="name-author">分类:<a href="#">&nbsp;&nbsp;{{ article.category }}</a></div>
-            <div class="name-author">标签:<a href="#">&nbsp;&nbsp;{{ article.tag }}</a></div>
+            <div class="name-author">分类:<a href="{% url 'category_info' article.category.id %}">&nbsp;&nbsp;{{ article.category }}</a></div>
+            <div class="name-author">标签:<a href="{% url 'tag_info' article.tag.id %}">&nbsp;&nbsp;{{ article.tag }}</a></div>
             <div class="name-author">浏览量:<a href="#">&nbsp;&nbsp;浏览量</a></div>
             <div class="clear"></div>            
               <img alt="" src="static/uploads/{{ article.article_image }}">                               

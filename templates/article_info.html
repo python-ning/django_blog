@@ -12,8 +12,8 @@
         <div style="padding-bottom: 20px;">
            <time datetime="2012-11-09" class="date-1"><i class="icon-calendar icon-white"></i>&nbsp;{{ articleinfo.create_date }}</time>
             <div class="name-author"><i class="icon-user icon-white"></i>&nbsp;Admin</div>
-            <div class="name-author">分类:<a href="#">&nbsp;&nbsp;{{ articleinfo.category }}</a></div>
-            <div class="name-author">标签:<a href="#">&nbsp;&nbsp;{{ articleinfo.tag }}</a></div>
+            <div class="name-author">分类:<a href="{% url 'category_info' articleinfo.category.id %}">&nbsp;&nbsp;{{ articleinfo.category }}</a></div>
+            <div class="name-author">标签:<a href="{% url 'tag_info' articleinfo.tag.id %}">&nbsp;&nbsp;{{ articleinfo.tag }}</a></div>
             <div class="name-author">浏览量:<a href="#">&nbsp;&nbsp;浏览量</a></div>
             <div class="clear"></div>  
         </div>          
