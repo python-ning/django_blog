@@ -9,25 +9,15 @@
         <h4>我的相册</h4>
          </article>
         <div class="clear"></div>
-         <ul class="portfolio clearfix">           
-           <li class="box"><a href="static/img/image/1.jpg" class="magnifier" ><img alt="" src="static/img/photo/1.jpg"></a></li> 
-           <li class="box"><a href="static/img/image/2.jpg" class="magnifier" ><img alt="" src="static/img/photo/2.jpg"></a></li> 
-           <li class="box"><a href="static/img/image/3.jpg" class="magnifier" ><img alt="" src="static/img/photo/3.jpg"></a></li> 
-           <li class="box"><a href="static/img/image/4.jpg" class="magnifier" ><img alt="" src="static/img/photo/4.jpg"></a></li> 
-           <li class="box"><a href="static/img/image/5.jpg" class="magnifier" ><img alt="" src="static/img/photo/5.jpg"></a></li> 
-           <li class="box"><a href="static/img/image/6.jpg" class="magnifier" ><img alt="" src="static/img/photo/6.jpg"></a></li> 
-           <li class="box"><a href="static/img/image/7.jpg" class="magnifier" ><img alt="" src="static/img/photo/7.jpg"></a></li> 
-           <li class="box"><a href="static/img/image/8.jpg" class="magnifier" ><img alt="" src="static/img/photo/8.jpg"></a></li>
-           <div class="clear"></div>
-           <li class="box"><a href="static/img/image/9.jpg" class="magnifier" ><img alt="" src="static/img/photo/9.jpg"></a></li> 
-           <li class="box"><a href="static/img/image/10.jpg" class="magnifier" ><img alt="" src="static/img/photo/10.jpg"></a></li> 
-           <li class="box"><a href="static/img/image/11.jpg" class="magnifier" ><img alt="" src="static/img/photo/11.jpg"></a></li> 
-           <li class="box"><a href="static/img/image/12.jpg" class="magnifier" ><img alt="" src="static/img/photo/12.jpg"></a></li> 
-           <li class="box"><a href="static/img/image/13.jpg" class="magnifier" ><img alt="" src="static/img/photo/13.jpg"></a></li> 
-           <li class="box"><a href="static/img/image/14.jpg" class="magnifier" ><img alt="" src="static/img/photo/14.jpg"></a></li> 
-           <li class="box"><a href="static/img/image/15.jpg" class="magnifier" ><img alt="" src="static/img/photo/15.jpg"></a></li> 
-           <li class="box"><a href="static/img/image/16.jpg" class="magnifier" ><img alt="" src="static/img/photo/16.jpg"></a></li>                  
-            </ul> 
+          <ul class="portfolio clearfix">           
+              {% for photo in photos %}
+              <li class="box">
+                <a href="static/uploads/{{ photo.image }}" class="magnifier">
+                  <img alt="" src="static/uploads/{{ photo.image }}" style="width: 270px; height:192px;" />
+                </a>
+              </li>
+              {% endfor %}
+          </ul> 
       </div>
         </div>
   </div>

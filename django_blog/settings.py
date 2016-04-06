@@ -93,9 +93,12 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR, 'uploads'),
+    # os.path.join(BASE_DIR, 'uploads'),
 )
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/uploads')
 
 MEDIA_URL = '/static/uploads/'
+
+STATIC_ROOT = os.path.join(os.path.dirname(
+    __file__), '..', 'templates').replace('\\', '/')

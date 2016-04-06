@@ -506,7 +506,7 @@ p {
   margin: 0;
 }
 .list-blog li {
-  background: url(../img/border-horiz.gif) repeat-x 0 bottom;
+  /*background: url(../img/border-horiz.gif) repeat-x 0 bottom;*/
   padding-bottom: 40px;
   margin-top: 32px;
 }

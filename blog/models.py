@@ -75,10 +75,11 @@ class Article(models.Model):
 
 class Photo(models.Model):
     image = models.ImageField(verbose_name='相册图片')
-    name = models.CharField(max_length=30, verbose_name="相册名字")
+    create_date = models.DateField(verbose_name='创建时间')
+    name = models.CharField(max_length=30, verbose_name="相册图片名字")
 
     class Meta:
-        verbose_name = '相册'
+        verbose_name = '相册图片'
         verbose_name_plural = verbose_name
         ordering = ['-id']
 

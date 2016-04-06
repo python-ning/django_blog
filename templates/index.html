@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% block content %}
 <div class="bg-content">
       <div class="container">
@@ -6,12 +7,10 @@
           <div class="span12"> 
         <!-- slider -->
         <div class="flexslider">
-              <ul class="slides">
-            <li><img src="static/img/slide-1.jpg" alt="" ></li>
-            <li><img src="static/img/slide-2.jpg" alt="" ></li>
-            <li><img src="static/img/slide-3.jpg" alt="" ></li>
-            <li><img src="static/img/slide-4.jpg" alt="" ></li>
-            <li><img src="static/img/slide-5.jpg" alt="" ></li>
+          <ul class="slides">
+              {% for banner in banners %}
+                <li><img src="static/uploads/{{ banner.image }}" alt="" ></li>
+              {% endfor %}
           </ul>
             </div>
         <span id="responsiveFlag"></span>
@@ -39,7 +38,7 @@
             {% for article in articles %}
               <li class="span3">
                 <div class="thumbnail thumbnail-1">
-                  <h3>{{ article.title }}</h3>
+                  <h5 style="color: #f25c27;">{{ article.title }}</h5>
                   <img  src="static/uploads/{{ article.article_image }}" alt="">
                   <section> 
                         <div class="meta">
@@ -56,7 +55,7 @@
                         </div> 
                         <div class="clear"></div>
                         <p>{{ article.description }}</p>
-                        <a href="#" class="btn btn-1">了解更多</a> 
+                        <a href="{% url 'article_info' article.id %}" class="btn btn-1">了解更多</a> 
                   </section>
                 </div>
               </li>
@@ -81,14 +80,14 @@
          </article>
         <div class="clear"></div>
          <ul class="portfolio clearfix">           
-           <li class="box"><a href="static/img/image/1.jpg" class="magnifier" ><img alt="" src="static/img/photo/1.jpg"></a></li> 
-           <li class="box"><a href="static/img/image/2.jpg" class="magnifier" ><img alt="" src="static/img/photo/2.jpg"></a></li> 
-           <li class="box"><a href="static/img/image/3.jpg" class="magnifier" ><img alt="" src="static/img/photo/3.jpg"></a></li> 
-           <li class="box"><a href="static/img/image/4.jpg" class="magnifier" ><img alt="" src="static/img/photo/4.jpg"></a></li> 
-           <li class="box"><a href="static/img/image/5.jpg" class="magnifier" ><img alt="" src="static/img/photo/5.jpg"></a></li> 
-           <li class="box"><a href="static/img/image/6.jpg" class="magnifier" ><img alt="" src="static/img/photo/6.jpg"></a></li> 
-           <li class="box"><a href="static/img/image/7.jpg" class="magnifier" ><img alt="" src="static/img/photo/7.jpg"></a></li> 
-           <li class="box"><a href="static/img/image/8.jpg" class="magnifier" ><img alt="" src="static/img/photo/8.jpg"></a></li>                       
+           <li class="box"><a href="static/img/image/1.jpg" class="magnifier" ><img alt="" src="static/img/photo/1.jpg" style="width: 270px; height:192px;"></a></li>                       
+           <li class="box"><a href="static/img/image/2.jpg" class="magnifier" ><img alt="" src="static/img/image/2.jpg" style="width: 270px; height:192px;"></a></li>                       
+           <li class="box"><a href="static/img/image/3.jpg" class="magnifier" ><img alt="" src="static/img/image/3.jpg" style="width: 270px; height:192px;"></a></li>                       
+           <li class="box"><a href="static/img/image/4.jpg" class="magnifier" ><img alt="" src="static/img/image/4.jpg" style="width: 270px; height:192px;"></a></li>                       
+           <li class="box"><a href="static/img/image/5.jpg" class="magnifier" ><img alt="" src="static/img/image/5.jpg" style="width: 270px; height:192px;"></a></li>                       
+           <li class="box"><a href="static/img/image/6.jpg" class="magnifier" ><img alt="" src="static/img/image/6.jpg" style="width: 270px; height:192px;"></a></li>                       
+           <li class="box"><a href="static/img/image/7.jpg" class="magnifier" ><img alt="" src="static/img/image/7.jpg" style="width: 270px; height:192px;"></a></li>                       
+           <li class="box"><a href="static/img/image/8.jpg" class="magnifier" ><img alt="" src="static/img/image/8.jpg" style="width: 270px; height:192px;"></a></li>                       
          </ul> 
       </div>
       </div>
