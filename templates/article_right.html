@@ -28,20 +28,12 @@
           <h3>文章归档</h3>
          <div class="wrapper">
           <ul class="list extra2 list-pad ">
-            <li><a href="#">May 2012</a></li>
-            <li><a href="#">April 2012</a></li>
-            <li><a href="#">March 2012</a></li>
-            <li><a href="#">February 2012</a></li>
-            <li><a href="#">January 2012</a></li>
-            <li><a href="#">December 2011</a></li>
-          </ul>
-            <ul class="list extra2">
-            <li><a href="#">November 2012</a></li>
-            <li><a href="#">October 2012</a></li>
-            <li><a href="#">September 2012</a></li>
-            <li><a href="#">August 2012</a></li>
-            <li><a href="#">July 2012</a></li>
-            <li><a href="#">June 2012</a></li>
-          </ul>
+          {% for key,value in dicts.items %}
+             <li><a href="{% url 'date_info' key|date:'Y' key|date:'m' %}">{{key|date:'Y , m '}}</a></li>
+<!--                {% for i in value%}
+                 {{i.title}}
+                 {{i.date_time|date:'M / d'}}
+               {% endfor %} -->
+        {% endfor %}    
           </div>
         </article>

@@ -6,6 +6,7 @@ from blog.views import *
 urlpatterns = [
     url(r'^article_info/(?P<id>\d+)$', article_info, name='article_info'),
     url(r'^category_info/(?P<id>\d+)$', category_info, name='category_info'),
+    url(r'^date_info/(?P<year>\d+)/(?P<month>\d+)$', date_info, name='date_info'),
     url(r'^tag_info/(?P<id>\d+)$', tag_info, name='tag_info'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', index, name='index'),
