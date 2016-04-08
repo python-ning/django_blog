@@ -29,11 +29,7 @@
          <div class="wrapper">
           <ul class="list extra2 list-pad ">
           {% for key,value in dicts.items %}
-             <li><a href="{% url 'date_info' key|date:'Y' key|date:'m' %}">{{key|date:'Y , m '}}</a></li>
-<!--                {% for i in value%}
-                 {{i.title}}
-                 {{i.date_time|date:'M / d'}}
-               {% endfor %} -->
+             <li><a href="{% url 'date_info' key|date:'Y' key|date:'m' %}">{{key|date:'Y / m '}}</a></li>
         {% endfor %}    
           </div>
         </article>

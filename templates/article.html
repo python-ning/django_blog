@@ -8,22 +8,34 @@
         <article class="span8">
          <div class="inner-1">         
           <ul class="list-blog">
-          {% for article in articles %}
+          {% for topic in topics.object_list %}
             <li>  
-            <h3><a href="article_info/{{ article.id }}" id="{{ article.id }}">{{ article.title }}</a></h3>     
-            <time datetime="2012-11-09" class="date-1"><i class="icon-calendar icon-white"></i>&nbsp;{{ article.create_date }}</time>
+            <h3><a href="article_info/{{ topic.id }}" id="{{ topic.id }}">{{ topic.title }}</a></h3>     
+            <time datetime="2012-11-09" class="date-1"><i class="icon-calendar icon-white"></i>&nbsp;{{ topic.create_date }}</time>
             <div class="name-author"><i class="icon-user icon-white"></i>&nbsp;Admin</div>
-            <div class="name-author">分类:<a href="{% url 'category_info' article.category.id %}">&nbsp;&nbsp;{{ article.category }}</a></div>
-            <div class="name-author">标签:<a href="{% url 'tag_info' article.tag.id %}">&nbsp;&nbsp;{{ article.tag }}</a></div>
+            <div class="name-author">分类:<a href="{% url 'category_info' topic.category.id %}">&nbsp;&nbsp;{{ topic.category }}</a></div>
+            <div class="name-author">标签:<a href="{% url 'tag_info' topic.tag.id %}">&nbsp;&nbsp;{{ topic.tag }}</a></div>
             <div class="name-author">浏览量:<a href="#">&nbsp;&nbsp;浏览量</a></div>
             <div class="clear"></div>            
-              <img alt="" src="static/uploads/{{ article.article_image }}">                               
-              <p>{{ article.description }}</p>
-              <a href="article_info/{{ article.id }}" id="{{ article.id }}" class="btn btn-1">了解更多</a>          
+              <img alt="" src="static/uploads/{{ topic.article_image }}">                               
+              <p>{{ topic.description }}</p>
+              <a href="article_info/{{ topic.id }}" id="{{ topic.id }}" class="btn btn-1">了解更多</a>          
             </li> 
           {% endfor %}       
           </ul>
-          </div>  
+          </div>
+
+<!-- 第二种分页显示方式 -->
+<p>
+{% if topics.has_previous %}
+  <a href="?page={{ topics.previous_page_number }}">上一页</a>
+  {% endif %}
+  {# topics.paginator.number_pages 返回总页数 #}
+  第{{ topics.number }}页/总共{{ topics.paginator.num_pages }}页
+{% if topics.has_next %}
+  <a href="?page={{ topics.next_page_number }}">下一页</a>
+{% endif %}
+</p>
         </article>
 {% include "article_right.html" %}
       </div>
