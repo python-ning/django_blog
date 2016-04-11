@@ -12,10 +12,12 @@ def index(request):
     articles = Article.objects.all()[:4]
     categorys = Category.objects.all()
     tags = Tag.objects.all()
+    photos = Photo.objects.all()[:8]
     data = {'banners': banners,
             'articles': articles,
             'categorys': categorys,
-            'tags': tags
+            'tags': tags,
+            'photos': photos
             }
     return render(request, 'index.html', data)
 

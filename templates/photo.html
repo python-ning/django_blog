@@ -12,8 +12,8 @@
           <ul class="portfolio clearfix">           
               {% for photo in photos %}
               <li class="box">
-                <a href="static/uploads/{{ photo.image }}" class="magnifier">
-                  <img alt="" src="static/uploads/{{ photo.image }}" style="width: 270px; height:192px;" />
+                <a href="uploads/{{ photo.image }}" class="magnifier">
+                  <img alt="" src="uploads/{{ photo.image }}" style="width: 270px; height:192px;" />
                 </a>
               </li>
               {% endfor %}

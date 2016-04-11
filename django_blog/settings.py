@@ -14,7 +14,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'django_admin_bootstrapped',
+    # 'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -96,9 +96,10 @@ STATICFILES_DIRS = (
     # os.path.join(BASE_DIR, 'uploads'),
 )
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/uploads')
+MEDIA_URL = '/uploads/'
 
-MEDIA_URL = '/static/uploads/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+
 
 STATIC_ROOT = os.path.join(os.path.dirname(
     __file__), '..', 'templates').replace('\\', '/')

@@ -12,7 +12,7 @@ class Nav(models.Model):
     types = models.BooleanField(verbose_name='类型')
     status = models.BooleanField(verbose_name='状态')
     order = models.IntegerField(verbose_name='排序')
-    banner = models.ImageField(verbose_name='导航图')
+    banner = models.ImageField(upload_to='banner', verbose_name='导航图')
 
     class Meta:
         verbose_name = '导航'
@@ -57,7 +57,7 @@ class Article(models.Model):
     description = models.CharField(max_length=150, verbose_name='文章描述')
     create_date = models.DateField(verbose_name='文章创建日期')
     update_date = models.DateField(verbose_name='文章更新日期')
-    article_image = models.ImageField(verbose_name="文章图片")
+    article_image = models.ImageField(upload_to='article_image', verbose_name="文章图片")
     content = models.TextField(verbose_name='正文')
     category = models.ForeignKey(Category, verbose_name='分类')
     tag = models.ForeignKey(Tag, verbose_name='标签')
@@ -74,7 +74,7 @@ class Article(models.Model):
 
 
 class Photo(models.Model):
-    image = models.ImageField(verbose_name='相册图片')
+    image = models.ImageField(upload_to='photo', verbose_name='相册图片')
     create_date = models.DateField(verbose_name='创建时间')
     name = models.CharField(max_length=30, verbose_name="相册图片名字")
 
@@ -90,7 +90,7 @@ class Photo(models.Model):
 
 
 class Banner(models.Model):
-    image = models.ImageField(verbose_name='Banner图片')
+    image = models.ImageField(upload_to='banner', verbose_name='Banner图片')
     name = models.CharField(max_length=30, verbose_name="Banner名字")
 
     class Meta:

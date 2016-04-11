@@ -1,6 +1,6 @@
 from django.conf.urls import include, url, patterns
 from django.contrib import admin
-import settings
+from django.conf import settings
 from blog.views import *
 
 urlpatterns = [
@@ -14,8 +14,5 @@ urlpatterns = [
     url(r'^article$', article, name='article'),
     url(r'^contact$', contact, name='contact'),
     url(r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT}),
+    url(r'^uploads/(?P<path>.*)$','django.views.static.serve',{'document_root': settings.MEDIA_ROOT})
 ]
-
-# urlpatterns += patterns('',
-#     url(r'^uploads/(?P<path>.*)', 'django.views.static.serve', {'document_root': settings.BASE_DIR}),
-# )
