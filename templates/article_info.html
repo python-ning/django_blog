@@ -17,7 +17,7 @@
             <div class="name-author">浏览量:<a href="#">&nbsp;&nbsp;浏览量</a></div>
             <div class="clear"></div>  
         </div>          
-          {{ articleinfo.content }}
+          {{ articleinfo.content|safe }}
         </div>  
         </article>
 {% include "article_right.html" %}
