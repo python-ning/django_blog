@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^date_info/(?P<year>\d+)/(?P<month>\d+)$', date_info, name='date_info'),
     url(r'^tag_info/(?P<id>\d+)$', tag_info, name='tag_info'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^$', index, name='index'),
     url(r'^photo$', photo, name='photo'),
     url(r'^article$', article, name='article'),

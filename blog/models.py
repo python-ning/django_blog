@@ -1,6 +1,6 @@
 # coding:utf-8
 from django.db import models
-
+from ckeditor.fields import RichTextField  # 富文本编辑器
 # Create your models here.
 
 # 导航表
@@ -57,8 +57,10 @@ class Article(models.Model):
     description = models.CharField(max_length=150, verbose_name='文章描述')
     create_date = models.DateField(verbose_name='文章创建日期')
     update_date = models.DateField(verbose_name='文章更新日期')
-    article_image = models.ImageField(upload_to='article_image', verbose_name="文章图片")
-    content = models.TextField(verbose_name='正文')
+    article_image = models.ImageField(
+        upload_to='article_image', verbose_name="文章图片")
+    # models.TextField(verbose_name='正文')
+    content = RichTextField(verbose_name='内容')
     category = models.ForeignKey(Category, verbose_name='分类')
     tag = models.ForeignKey(Tag, verbose_name='标签')
 
