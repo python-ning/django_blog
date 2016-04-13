@@ -66,7 +66,6 @@ def article(request):
         topics = paginator.page(1)  # 取第一页的记录
     except EmptyPage:  # 如果页码太大，没有相应的记录
         topics = paginator.page(paginator.num_pages)  # 取最后一页的记录
-    print paginator
     new_articles = Article.objects.order_by('create_date')
     categorys = Category.objects.all()
     tags = Tag.objects.all()
