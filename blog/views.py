@@ -83,6 +83,7 @@ def article(request):
 
 def article_info(request, id):
     # 文章详情
+
     categorys = Category.objects.all()
     tags = Tag.objects.all()
     new_articles = Article.objects.order_by('create_date')
