@@ -6,9 +6,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = 'afmx17+=l!gpjaok_e1+s-st)t4)o5x4ruvetf*a)6x!bvojv8'
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["172.16.11.28"]
 
 
 # Application definition
